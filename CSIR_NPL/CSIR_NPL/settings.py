@@ -128,14 +128,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Set STATICFILES_STORAGE to 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Add STATICFILES_DIRS to specify the location of your static files
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'CSIR_NPL', 'CSIR_NPLntpweb', 'static'),
 ]
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# Ensure STATIC_ROOT is properly configured for production
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Adjust this path as necessary
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
