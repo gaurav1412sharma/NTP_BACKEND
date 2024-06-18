@@ -132,7 +132,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Add STATICFILES_DIRS to specify the location of your static files
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'CSIR_NPLntpweb', 'static'),
+    os.path.join(BASE_DIR, 'CSIR_NPL', 'CSIR_NPLntpweb', 'static'),
 ]
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
